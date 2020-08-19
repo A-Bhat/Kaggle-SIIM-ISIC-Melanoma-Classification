@@ -9,10 +9,10 @@ Along with this year's competition data, I used the data from last three years I
 ## TFRecord conversion
 All the image data was converted into TFRecord format to leverage faster read speeds and reduce the overall model train time.
 
-## Cross Validation Strategy:
+## Cross Validation Strategy
 A triple stratified cross validation strategy was used and thanks to Chris Deotte for providing the dataset(this saved loads of time). In the validation folds only the current competition data was used. The CV strategy is explained [here](https://www.kaggle.com/c/siim-isic-melanoma-classification/discussion/165526) 
 
-## Preprocessing/Augmentations:
+## Preprocessing/Augmentations
 1. Rotation
 2. Shear
 3. Zoom
@@ -31,8 +31,8 @@ Inspired by [this](https://www.kaggle.com/c/siim-isic-melanoma-classification/di
 
 At the end of the CNN architecture a GlobalAveragePooling layer and a final dense layer with sigmoid activation was used for making predictions.
 
-## Test Time Augmentation:
+## Test Time Augmentation
 Around 25 rounds of TTA was used to make predictions.
 
-## Final Ensemble:
+## Final Ensemble
 A weighted ensemble of the above models was used for final submission. Weights were choosen based on best OOF CV score.
